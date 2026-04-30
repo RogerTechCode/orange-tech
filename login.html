@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - Orange Futebol Clube</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { orange: { primary: '#f05137', dark: '#d9412a', light: '#f57d6b' } },
+                    fontFamily: { 'poppins': ['Poppins', 'sans-serif'], 'sans': ['Open Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="min-h-screen bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center p-4 font-sans">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md animate-fadeIn">
+        <div class="text-center mb-8">
+            <div class="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                <img src="ORANGE 3 (1).png"
+                    alt="Orange FC" class="w-full h-full object-contain drop-shadow-md">
+            </div>
+            <h1 class="text-3xl font-bold text-gray-900 font-poppins">Painel Admin</h1>
+            <p class="text-gray-600 mt-2">Orange Futebol Clube</p>
+        </div>
+
+        <form id="login-form" class="space-y-6">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Usuário</label>
+                <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                    <input type="text" id="username"
+                        class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none transition-all"
+                        placeholder="Digite seu usuário" required>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Senha</label>
+                <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </span>
+                    <input type="password" id="password"
+                        class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none transition-all"
+                        placeholder="Digite sua senha" required>
+                </div>
+            </div>
+
+            <button type="submit"
+                class="w-full px-6 py-3 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2">
+                <span>Entrar</span>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            if (user === 'julioadmin' && pass === 'julio26portal') {
+                localStorage.setItem('admin_auth', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Usuário ou senha incorretos.');
+            }
+        });
+    </script>
+</body>
+
+</html>

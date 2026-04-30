@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Notícias - Orange FC Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            500: '#f05137',
+                            600: '#d9412a'
+                        }
+                    },
+                    fontFamily: { 'poppins': ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col md:flex-row admin-body">
+    <!-- Mobile Header -->
+    <header
+        class="md:hidden bg-slate-900 text-white p-4 flex justify-between items-center shadow-lg sticky top-0 z-40 w-full">
+        <div class="flex items-center space-x-3">
+            <img src="ORANGE 3 (1).png"
+                alt="Orange FC" class="w-10 h-10 object-contain drop-shadow-md">
+            <h2 class="text-lg font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+        </div>
+        <button id="mobile-menu-btn" class="p-2 text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Sidebar (Desktop/Tablet) -->
+    <aside class="w-64 bg-slate-900 text-white flex-shrink-0 hidden lg:block sticky top-0 h-screen overflow-y-auto">
+        <div class="p-6 flex items-center space-x-3">
+            <img src="ORANGE 3 (1).png"
+                alt="Orange FC" class="w-10 h-10 object-contain drop-shadow-md">
+            <h2 class="text-xl font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+        </div>
+        <nav class="mt-4 px-4 space-y-2">
+            <a href="index.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white border-b border-slate-800 mb-4 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Sair pro Site</span>
+            </a>
+            <a href="dashboard.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all"><span>Dashboard</span></a>
+            <a href="news.html"
+                class="flex items-center space-x-3 p-3 rounded-lg bg-orange-600 text-white font-bold"><span>Notícias</span></a>
+            <a href="team.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white"><span>Equipe</span></a>
+            <a href="sponsors.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white"><span>Parceiros</span></a>
+            <a href="backup.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all border-t border-slate-700 mt-4 pt-4"><span>Backup
+                    & Suporte</span></a>
+            <button id="logout-btn-desktop"
+                class="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-red-900/50 text-red-400 mt-8 transition-all"><span>Sair</span></button>
+        </nav>
+    </aside>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="admin-mobile-menu" class="fixed inset-0 bg-slate-900/95 z-50 p-6 flex flex-col hidden lg:hidden">
+        <div class="flex justify-between items-center mb-10">
+            <div class="flex items-center space-x-3">
+                <img src="ORANGE 3 (1).png"
+                    alt="Orange FC" class="w-12 h-12 object-contain drop-shadow-md">
+                <h2 class="text-xl font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+            </div>
+            <button id="mobile-menu-close" class="p-2 text-gray-400 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <nav class="space-y-4 text-center">
+            <a href="index.html" class="block text-2xl font-bold p-4 text-gray-400 hover:text-white">Sair pro
+                Site</a>
+            <a href="dashboard.html" class="block text-2xl font-bold p-4 text-white">Dashboard</a>
+            <a href="news.html" class="block text-3xl font-black p-4 text-orange-500">Notícias</a>
+            <a href="team.html" class="block text-2xl font-bold p-4 text-white">Equipe</a>
+            <a href="sponsors.html" class="block text-2xl font-bold p-4 text-white">Parceiros</a>
+            <a href="backup.html" class="block text-2xl font-bold p-4 text-gray-400">Backup & Suporte</a>
+            <button id="logout-btn-mobile" class="w-full text-2xl font-bold p-4 text-red-500 mt-10">Sair</button>
+        </nav>
+    </div>
+
+    <main class="flex-grow p-4 md:p-10 lg:p-12">
+        <div class="flex justify-between items-center mb-10">
+            <div>
+                <h1 class="text-4xl font-bold font-poppins text-slate-800">Gerenciar Notícias</h1>
+                <p class="text-slate-500 mt-2">Crie, edite ou remova as notícias do portal.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="restoreDefaults()"
+                    class="bg-slate-100 text-slate-600 px-6 py-3 rounded-xl font-bold hover:bg-slate-200 transition-all text-sm">
+                    Restaurar Padrão
+                </button>
+                <button onclick="openModal()"
+                    class="bg-orange-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-orange-700 transition-all">
+                    + Nova Notícia
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left min-w-[600px]">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-8 py-4 text-sm font-bold text-slate-500 uppercase">Título</th>
+                            <th class="px-8 py-4 text-sm font-bold text-slate-500 uppercase">Data</th>
+                            <th class="px-8 py-4 text-sm font-bold text-slate-500 uppercase text-right">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="news-table-body" class="divide-y divide-slate-100">
+                        <!-- Dynamic Rows -->
+                    </tbody>
+                </table>
+                <div id="empty-state" class="hidden p-20 text-center">
+                    <div class="text-slate-300 mb-4 flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                            <polyline points="13 2 13 9 20 9"></polyline>
+                        </svg>
+                    </div>
+                    <p class="text-slate-500 font-bold">Nenhuma notícia encontrada.</p>
+                    <p class="text-slate-400 text-sm mt-1">Clique em "Nova Notícia" ou restaure os dados padrão.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal"
+        class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl p-6 md:p-10 max-w-2xl w-full shadow-2xl max-h-[90vh] overflow-y-auto">
+            <h2 id="modal-title" class="text-3xl font-bold mb-8 font-poppins">Nova Notícia</h2>
+            <form id="news-form" class="space-y-6" novalidate>
+                <input type="hidden" id="news-id">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="col-span-1 md:col-span-2"><label
+                            class="block text-sm font-bold mb-2">Título</label><input type="text" id="title"
+                            class="w-full p-3 border rounded-xl bg-slate-50" required></div>
+                    <div><label class="block text-sm font-bold mb-2">Data</label><input type="date" id="date"
+                            class="w-full p-3 border rounded-xl bg-slate-50" required></div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Imagem da Notícia</label>
+                        <div class="flex items-center space-x-4">
+                            <div id="image-preview"
+                                class="w-16 h-16 rounded-xl bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center overflow-hidden">
+                            <span class="text-slate-400 text-xs">Sem foto</span>
+                        </div>
+                        <input type="file" id="imageFile" accept="image/*"
+                            class="flex-1 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                    </div>
+                    <input type="hidden" id="imageUrl">
+                </div>
+                <!-- NOVO CAMPO LINK -->
+                <div class="col-span-1 md:col-span-2"><label class="block text-sm font-bold mb-2">Link Externo (Opcional)</label><input type="url" id="newsLink" class="w-full p-3 border rounded-xl bg-slate-50" placeholder="https://exemplo.com"></div>
+            </div>
+            <div><label class="block text-sm font-bold mb-2">Resumo</label><textarea id="excerpt"
+                        class="w-full p-3 border rounded-xl bg-slate-50 h-24" required></textarea></div>
+                <div><label class="block text-sm font-bold mb-2">Conteúdo Completo</label><textarea id="content"
+                        class="w-full p-3 border rounded-xl bg-slate-50 h-48" required></textarea></div>
+                <div class="flex items-center space-x-3 bg-orange-50 p-4 rounded-xl border border-orange-100">
+                    <input type="checkbox" id="isFeatured" class="w-5 h-5 accent-orange-600">
+                    <label for="isFeatured" class="text-sm font-bold text-orange-900">Notícia de Destaque (Carrossel
+                        Principal)</label>
+                </div>
+                <div class="flex space-x-4 pt-4">
+                    <button type="button" onclick="saveNews()"
+                        class="flex-1 bg-orange-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-orange-700 transition-all">Salvar
+                        Alterações</button>
+                    <button type="button" onclick="closeModal()"
+                        class="flex-1 bg-slate-100 py-4 rounded-xl font-bold text-slate-500 hover:bg-slate-200 transition-all">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        async function loadNews() {
+
+            let news = await Storage.get('news');
+
+            const tbody = document.getElementById('news-table-body');
+            const emptyState = document.getElementById('empty-state');
+
+            if (!tbody) return;
+
+            if (news.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            tbody.innerHTML = news.map(n => `
+        <tr>
+            <td class="px-8 py-5 font-bold">${n.title}</td>
+            <td class="px-8 py-5">${new Date(n.date).toLocaleDateString('pt-BR')}</td>
+            <td class="px-8 py-5 text-right">
+                <button onclick="editNews('${n.id}')">Editar</button>
+                <button onclick="deleteNews('${n.id}')">Excluir</button>
+            </td>
+        </tr>
+    `).join('');
+        }
+
+        function openModal(id = null) {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('image-preview').innerHTML = '<span class="text-slate-400 text-xs">Sem foto</span>';
+            if (!id) {
+                document.getElementById('modal-title').innerText = 'Nova Notícia';
+                document.getElementById('news-form').reset();
+                document.getElementById('news-id').value = '';
+            }
+        }
+
+        function closeModal() { document.getElementById('modal').classList.add('hidden'); }
+
+        async function editNews(id) {
+            const news = await Storage.get('news');
+            const item = news.find(n => n.id === id);
+            if (item) {
+                document.getElementById('modal-title').innerText = 'Editar Notícia';
+                document.getElementById('news-id').value = item.id;
+                document.getElementById('title').value = item.title;
+                document.getElementById('date').value = item.date;
+                document.getElementById('imageUrl').value = item.imageUrl;
+                document.getElementById('newsLink').value = item.link || '';
+                if (item.imageUrl) {
+                    document.getElementById('image-preview').innerHTML = `<img src="${item.imageUrl}" class="w-full h-full object-cover">`;
+                }
+                document.getElementById('excerpt').value = item.excerpt;
+                document.getElementById('content').value = item.content;
+                document.getElementById('isFeatured').checked = !!item.isFeatured;
+                openModal(id);
+            }
+        }
+
+        async function deleteNews(id) {
+            if (confirm('Deseja realmente excluir esta notícia?')) {
+                await Storage.delete('news', id);
+                await loadNews();
+            }
+        }
+
+        async function saveNews() {
+            const id = document.getElementById('news-id').value;
+            const title = document.getElementById('title').value;
+            const date = document.getElementById('date').value;
+            const content = document.getElementById('content').value;
+            if (!title || !date || !content) {
+                alert('Por favor, preencha o título, a data e o conteúdo.');
+                return;
+            }
+            const data = {
+                title: title,
+                date: date,
+                link: document.getElementById('newsLink').value || '',
+                imageUrl: document.getElementById('imageUrl').value || '',
+                excerpt: document.getElementById('excerpt').value || '',
+                content: content,
+                isFeatured: document.getElementById('isFeatured').checked
+            };
+            try {
+                if (id) {
+                    await Storage.update('news', id, data);
+                } else {
+                    await Storage.add('news', data);
+                }
+                closeModal();
+                await loadNews();
+            } catch (err) {
+                alert('Erro ao salvar: ' + err.message);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('imageFile').addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const base64 = await Storage.fileToBase64(file);
+                    document.getElementById('imageUrl').value = base64;
+                    document.getElementById('image-preview').innerHTML = `<img src="${base64}" class="w-full h-full object-cover">`;
+                }
+            });
+            loadNews();
+        });
+    </script>
+</body>
+
+</html>

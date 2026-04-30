@@ -1,0 +1,597 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfdfd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f05137;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-dark);
+}
+
+
+/* Fixed header — removed from document flow, height changes NEVER affect scrollbar */
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: white;
+  overflow: visible !important;
+  height: 140px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, height;
+}
+
+/* Center Carousel Group utility - only on desktop to avoid breaking mobile slider */
+@media (min-width: 1024px) {
+  .center-carousel-group .splide__list {
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+/* Padding only for site pages with fixed header, not for admin */
+body:not(.admin-body) {
+  padding-top: 140px;
+}
+
+#top-banner {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+}
+
+#nav-bar {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  height: 80px;
+}
+
+#logo-container {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 60;
+}
+
+header.header-scrolled {
+  height: 80px;
+}
+
+header.header-scrolled #top-banner {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+header.header-scrolled #nav-bar {
+  transform: translateY(-60px);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Premium Design Tokens */
+:root {
+  --orange-primary: #f05137;
+  --orange-dark: #ca3b25;
+  --orange-light: #b53926;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 400px;
+  /* Ensure visibility even if image fails */
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.bg-orange-news {
+  background-color: #f05137;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 0, 0, 0.1) 0, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: soft-light;
+}
+
+.glass-card-news {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-news:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #f05137;
+  transform: translateY(-8px);
+}
+
+/* Editorial News System */
+.news-featured-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  /* Full width hero usually looks better without rounded corners in this context */
+  height: 750px;
+  background: #0f172a;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.news-featured-card:hover {
+  transform: none;
+}
+
+.news-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.7;
+}
+
+.news-featured-card:hover .news-featured-img {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Premium Light Background System */
+.bg-premium-light {
+  background-color: #fdfdfd;
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(240, 81, 55, 0.05) 0px, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, rgba(240, 81, 55, 0.04) 0px, transparent 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(240, 81, 55, 0.02) 0px, transparent 70%);
+}
+
+/* Orange TV Premium Banner */
+.orange-tv-banner {
+  background: #0f172a;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(240, 81, 55, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(240, 81, 55, 0.1) 0%, transparent 50%);
+  border: 1px solid rgba(240, 81, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.orange-tv-banner:hover {
+  border-color: rgba(240, 81, 55, 0.5);
+  box-shadow: 0 0 40px rgba(240, 81, 55, 0.1);
+}
+
+.orange-tv-logo-glow {
+  filter: drop-shadow(0 0 15px rgba(240, 81, 55, 0.3));
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.orange-tv-banner:hover .orange-tv-logo-glow {
+  transform: scale(1.02);
+}
+
+.btn-watch-now {
+  background: #f05137;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(240, 81, 55, 0.3);
+}
+
+.btn-watch-now:hover {
+  background: #d9412a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 81, 55, 0.4);
+}
+
+/* Scroll Reveal Animations - Optimized for GPU */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.editorial-gradient {
+  background: linear-gradient(0deg, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 0.8) 30%, transparent 100%);
+}
+
+.editorial-badge {
+  background: #f05137;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+}
+
+.editorial-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+.news-grid-card {
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.news-grid-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #f05137;
+  transform: translateY(-5px);
+}
+
+/* Splide Premium Overrides */
+.splide__pagination__page {
+  background: rgba(240, 81, 55, 0.3);
+  border-radius: 2px;
+  height: 4px;
+  width: 20px;
+  transition: all 0.3s ease;
+}
+
+.splide__pagination__page.is-active {
+  background: #f05137;
+  transform: none;
+  width: 40px;
+}
+
+.splide__arrow {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.3s ease;
+}
+
+.splide__arrow:hover {
+  background: #f05137;
+  border-color: #f05137;
+}
+
+.splide__arrow svg {
+  fill: white;
+}
+
+/* European Club Aesthetics */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a,
+button,
+.font-poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  font-style: italic;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #f05137;
+  border-radius: 2px;
+}
+
+nav a {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.team-name-shadow {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Header Logic */
+.logo-shrink div {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .logo-shrink div {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+}
+
+header.sticky {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.nav-active {
+  color: var(--orange-primary) !important;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--orange-primary);
+}
+
+/* Nautical Redesign - News Section */
+/* Premium News Background - Optimized for performance */
+.bg-news-watermark {
+  background-color: #fdfdfd;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(240, 81, 55, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(240, 81, 55, 0.02) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f05137' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  position: relative;
+}
+
+.bg-news-watermark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23f05137' fill-opacity='0.02'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.news-section-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.news-section-title h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f05137;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.news-section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.news-section-title h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #0f172a;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.news-section-title .accent-line {
+  flex-grow: 1;
+  height: 6px;
+  background-color: #f05137;
+  border-radius: 3px;
+}
+
+.nautical-card {
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.nautical-card:hover {
+  transform: translateY(-5px);
+}
+
+.nautical-card .card-image {
+  height: 250px;
+  width: 100%;
+}
+
+.nautical-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nautical-card .card-content {
+  background-color: #f05137;
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nautical-card .card-date {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.nautical-card .card-title {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+/* Nautical Header Style - Upgraded to Orange */
+.header-nautical {
+  background-color: #f05137 !important;
+}
+
+.header-nautical nav a {
+  color: #ffffff !important;
+}
+
+.header-nautical nav a:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Menu Upgrades */
+#mobile-menu {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 2px solid #f05137;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  z-index: 100;
+}
+
+#mobile-menu.hidden {
+  display: none;
+}
+
+#mobile-menu:not(.hidden) {
+  display: block;
+}
+
+#mobile-menu a {
+  transition: all 0.2s ease;
+  border-left: 0px solid #f05137;
+}
+
+#mobile-menu a:hover {
+  padding-left: 1.5rem;
+  border-left-width: 4px;
+  background-color: #fff7ed;
+}
+
+/* Ensure header container doesn't clip menu */
+header {
+  overflow: visible !important;
+}
+
+/* Fix for Puma logo and others in grid */
+#sponsors-grid img {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+#sponsors-grid div:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Mobile Header & Admin Modal Fixes */
+/* Mobile Header & Admin Modal Fixes */
+@media (max-width: 767px) {
+  header {
+    height: 80px !important;
+  }
+
+  body:not(.admin-body) {
+    padding-top: 80px !important;
+  }
+
+  header.header-scrolled #nav-bar {
+    transform: none !important;
+  }
+
+  #top-banner {
+    display: none !important;
+  }
+
+  /* Logo must ALWAYS be centered vertically and horizontally on mobile */
+  #logo-container {
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}

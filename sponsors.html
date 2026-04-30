@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros - Admin Orange FC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            500: '#f05137',
+                            600: '#d9412a'
+                        }
+                    },
+                    fontFamily: { 'poppins': ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 flex flex-col md:flex-row min-h-screen admin-body">
+    <!-- Mobile Header -->
+    <header
+        class="md:hidden bg-slate-900 text-white p-4 flex justify-between items-center shadow-lg sticky top-0 z-40 w-full">
+        <div class="flex items-center space-x-3">
+            <img src="ORANGE 3 (1).png"
+                alt="Orange FC" class="w-10 h-10 object-contain drop-shadow-md">
+            <h2 class="text-lg font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+        </div>
+        <button id="mobile-menu-btn" class="p-2 text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Sidebar (Desktop/Tablet) -->
+    <aside class="w-64 bg-slate-900 text-white flex-shrink-0 hidden lg:block sticky top-0 h-screen overflow-y-auto">
+        <div class="p-6 flex items-center space-x-3">
+            <img src="ORANGE 3 (1).png"
+                alt="Orange FC" class="w-10 h-10 object-contain drop-shadow-md">
+            <h2 class="text-xl font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+        </div>
+        <nav class="mt-4 px-4 space-y-2">
+            <a href="index.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white border-b border-slate-800 mb-4 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Sair pro Site</span>
+            </a>
+            <a href="dashboard.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all"><span>Dashboard</span></a>
+            <a href="news.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all"><span>Notícias</span></a>
+            <a href="team.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white"><span>Equipe</span></a>
+            <a href="sponsors.html"
+                class="flex items-center space-x-3 p-3 rounded-lg bg-orange-600 text-white font-bold"><span>Parceiros</span></a>
+            <a href="backup.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all border-t border-slate-800 mt-4 pt-4"><span>Backup
+                    & Suporte</span></a>
+            <button id="logout-btn-desktop"
+                class="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-red-900/50 text-red-400 mt-8 transition-all"><span>Sair</span></button>
+        </nav>
+    </aside>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="admin-mobile-menu" class="fixed inset-0 bg-slate-900/95 z-50 p-6 flex flex-col hidden lg:hidden">
+        <div class="flex justify-between items-center mb-10">
+            <div class="flex items-center space-x-3">
+                <img src="ORANGE 3 (1).png"
+                    alt="Orange FC" class="w-12 h-12 object-contain drop-shadow-md">
+                <h2 class="text-xl font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+            </div>
+            <button id="mobile-menu-close" class="p-2 text-gray-400 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <nav class="space-y-4 text-center">
+            <a href="index.html" class="block text-2xl font-bold p-4 text-gray-400 hover:text-white">Sair pro
+                Site</a>
+            <a href="dashboard.html" class="block text-2xl font-bold p-4 text-white">Dashboard</a>
+            <a href="news.html" class="block text-2xl font-bold p-4 text-white">Notícias</a>
+            <a href="team.html" class="block text-2xl font-bold p-4 text-white">Equipe</a>
+            <a href="sponsors.html" class="block text-3xl font-black p-4 text-orange-500">Parceiros</a>
+            <a href="backup.html" class="block text-2xl font-bold p-4 text-gray-400">Backup & Suporte</a>
+            <button id="logout-btn-mobile" class="w-full text-2xl font-bold p-4 text-red-500 mt-10">Sair</button>
+        </nav>
+    </div>
+
+    <main class="flex-grow p-4 md:p-10 lg:p-12">
+        <div class="flex justify-between items-center mb-10">
+            <h1 class="text-4xl font-bold text-slate-800">Nossos Parceiros</h1>
+            <button onclick="openModal()" class="bg-orange-600 text-white px-6 py-3 rounded-xl font-bold">+ Novo
+                Parceiro</button>
+        </div>
+
+        <div id="sponsors-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </main>
+
+    <div id="modal"
+        class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl p-6 md:p-10 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto">
+            <h2 class="text-2xl font-bold mb-6">Cadastrar Parceiro</h2>
+            <form id="sponsor-form" class="space-y-4" novalidate>
+                <input type="text" id="name" placeholder="Nome da Empresa" class="w-full p-4 border rounded-xl">
+                <div class="flex items-center space-x-4 p-4 bg-slate-50 rounded-xl border">
+                    <div id="image-preview"
+                        class="w-16 h-16 rounded-xl bg-white border flex items-center justify-center overflow-hidden flex-shrink-0 p-2">
+                        <span class="text-[10px] text-slate-400">Logo</span>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">Logo do Parceiro</label>
+                        <input type="file" id="imageFile" accept="image/*"
+                            class="w-full text-xs file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-orange-700">
+                    </div>
+                    <input type="hidden" id="imageUrl">
+                </div>
+                <div class="flex space-x-3 pt-4">
+                    <button type="button" onclick="saveSponsor()"
+                        class="flex-1 bg-orange-600 text-white py-4 rounded-xl font-bold">Salvar</button>
+                    <button type="button" onclick="closeModal()"
+                        class="flex-1 bg-slate-100 py-4 rounded-xl font-bold text-slate-500">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        async function loadSponsors() {
+            let data = await Storage.get('sponsors');
+            const list = document.getElementById('sponsors-list');
+            list.innerHTML = data.map(s => `
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center group">
+                    <div class="h-24 flex items-center justify-center mb-4">
+                        <img src="${s.imageUrl}" class="max-h-full max-w-full grayscale group-hover:grayscale-0 transition-all">
+                    </div>
+                    <p class="font-bold text-slate-700 mb-4">${s.name}</p>
+                    <button onclick="deleteSponsor('${s.id}')" class="text-red-400 hover:text-red-600 text-sm font-bold">Remover</button>
+                </div>
+            `).join('');
+        }
+
+        function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('sponsor-form').reset();
+            document.getElementById('image-preview').innerHTML = '<span class="text-[10px] text-slate-400">Logo</span>';
+            document.getElementById('imageUrl').value = '';
+        }
+        function closeModal() { document.getElementById('modal').classList.add('hidden'); }
+
+        async function deleteSponsor(id) {
+            if (confirm('Remover parceiro?')) { await Storage.delete('sponsors', id); await loadSponsors(); }
+        }
+
+        async function saveSponsor() {
+            const name = document.getElementById('name').value;
+            const imageUrl = document.getElementById('imageUrl').value;
+            if (!name || !imageUrl) {
+                alert('Por favor, preencha o nome da empresa e adicione a logo.');
+                return;
+            }
+            try {
+                await Storage.add('sponsors', { name, imageUrl });
+                closeModal();
+                await loadSponsors();
+            } catch (err) {
+                alert('Erro ao salvar: ' + err.message);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('imageFile').addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const base64 = await Storage.fileToBase64(file);
+                    document.getElementById('imageUrl').value = base64;
+                    document.getElementById('image-preview').innerHTML = `<img src="${base64}" class="max-w-full max-h-full object-contain">`;
+                }
+            });
+            loadSponsors();
+        });
+    </script>
+</body>
+
+</html>

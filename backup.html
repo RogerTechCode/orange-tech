@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup e Restauração - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            500: '#f05137',
+                            600: '#d9412a'
+                        }
+                    },
+                    fontFamily: { 'poppins': ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 flex flex-col md:flex-row min-h-screen admin-body">
+    <!-- Mobile Header -->
+    <header
+        class="md:hidden bg-slate-900 text-white p-4 flex justify-between items-center shadow-lg sticky top-0 z-40 w-full">
+        <div class="flex items-center space-x-3">
+            <img src="ORANGE 3 (1).png"
+                alt="Orange FC" class="w-10 h-10 object-contain drop-shadow-md">
+            <h2 class="text-lg font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+        </div>
+        <button id="mobile-menu-btn" class="p-2 text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Sidebar (Desktop/Tablet) -->
+    <aside class="w-64 bg-slate-900 text-white flex-shrink-0 hidden lg:block sticky top-0 h-screen overflow-y-auto">
+        <div class="p-6 flex items-center space-x-3">
+            <img src="ORANGE 3 (1).png"
+                alt="Orange FC" class="w-10 h-10 object-contain drop-shadow-md">
+            <h2 class="text-xl font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+        </div>
+        <nav class="mt-4 px-4 space-y-2">
+            <a href="index.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white border-b border-slate-800 mb-4 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Sair pro Site</span>
+            </a>
+            <a href="dashboard.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all"><span>Dashboard</span></a>
+            <a href="news.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all"><span>Notícias</span></a>
+            <a href="team.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white"><span>Equipe</span></a>
+            <a href="sponsors.html"
+                class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-800 transition-all text-slate-400 hover:text-white"><span>Parceiros</span></a>
+            <a href="backup.html"
+                class="flex items-center space-x-3 p-3 rounded-lg bg-orange-600 text-white font-bold border-t border-slate-800 mt-4 pt-4"><span>Backup
+                    & Suporte</span></a>
+            <button id="logout-btn-desktop"
+                class="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-red-900/50 text-red-400 mt-8 transition-all"><span>Sair</span></button>
+        </nav>
+    </aside>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="admin-mobile-menu" class="fixed inset-0 bg-slate-900/95 z-50 p-6 flex flex-col hidden lg:hidden">
+        <div class="flex justify-between items-center mb-10">
+            <div class="flex items-center space-x-3">
+                <img src="ORANGE 3 (1).png"
+                    alt="Orange FC" class="w-12 h-12 object-contain drop-shadow-md">
+                <h2 class="text-xl font-black font-poppins text-white uppercase tracking-tighter">ORANGE</h2>
+            </div>
+            <button id="mobile-menu-close" class="p-2 text-gray-400 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <nav class="space-y-4 text-center">
+            <a href="index.html" class="block text-2xl font-bold p-4 text-gray-400 hover:text-white">Sair pro
+                Site</a>
+            <a href="dashboard.html" class="block text-2xl font-bold p-4 text-white">Dashboard</a>
+            <a href="news.html" class="block text-2xl font-bold p-4 text-white">Notícias</a>
+            <a href="team.html" class="block text-2xl font-bold p-4 text-white">Equipe</a>
+            <a href="sponsors.html" class="block text-2xl font-bold p-4 text-white">Parceiros</a>
+            <a href="backup.html" class="block text-3xl font-black p-4 text-orange-500">Backup & Suporte</a>
+            <button id="logout-btn-mobile" class="w-full text-2xl font-bold p-4 text-red-500 mt-10">Sair</button>
+        </nav>
+    </div>
+
+    <main class="flex-grow p-4 md:p-10 lg:p-12 max-w-5xl">
+        <h1 class="text-4xl font-bold mb-10 text-slate-800">Backup do Sistema</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border">
+                <h2 class="text-xl font-bold mb-4">Exportar Dados</h2>
+                <p class="text-gray-500 mb-6">Baixe um arquivo JSON contendo todas as notícias, equipe e configurações
+                    do clube.</p>
+                <button id="btn-export" onclick="exportBackup()"
+                    class="w-full py-4 bg-slate-800 text-white rounded-2xl font-bold hover:bg-slate-900 transition-all">Baixar
+                    JSON</button>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border">
+                <h2 class="text-xl font-bold mb-4">Importar Dados</h2>
+                <p class="text-gray-500 mb-6">Restaurar o sistema a partir de um arquivo de backup anterior. <br><span class="text-orange-500 font-bold">Aviso: Isso substituirá os dados atuais.</span></p>
+                <input type="file" id="import-file" class="hidden" accept=".json" onchange="importBackup(this)">
+                <button id="btn-import" onclick="document.getElementById('import-file').click()"
+                    class="w-full py-4 bg-orange-600 text-white rounded-2xl font-bold hover:bg-orange-700 transition-all">Upload
+                    e Restaurar</button>
+            </div>
+        </div>
+
+        <div id="status-msg" class="mt-8 p-4 rounded-xl hidden"></div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        async function exportBackup() {
+            const btn = document.getElementById('btn-export');
+            btn.disabled = true;
+            btn.innerText = 'Processando...';
+            
+            try {
+                const data = {
+                    news: await Storage.get('news', false),
+                    sponsors: await Storage.get('sponsors', false),
+                    managers: await Storage.get('managers', false),
+                    coaches: await Storage.get('coaches', false),
+                    locations: await Storage.get('locations', false),
+                    clubInfo: JSON.parse(localStorage.getItem('clubInfo') || '{}'),
+                    timestamp: new Date().toISOString()
+                };
+                
+                const b = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(b);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `backup-orange-fc-${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                
+                showMessage('Backup gerado com sucesso!', 'success');
+            } catch (err) {
+                console.error(err);
+                showMessage('Erro ao gerar backup: ' + err.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'Baixar JSON';
+            }
+        }
+
+        function showMessage(msg, type) {
+            const el = document.getElementById('status-msg');
+            el.innerText = msg;
+            el.className = `mt-8 p-4 rounded-xl ${type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
+            el.classList.remove('hidden');
+        }
+
+        async function importBackup(input) {
+            if (!input.files || !input.files[0]) return;
+            
+            if (!confirm('Tem certeza? Isso apagará os dados atuais no banco de dados e substituirá pelos dados do arquivo.')) {
+                input.value = '';
+                return;
+            }
+
+            const btn = document.getElementById('btn-import');
+            btn.disabled = true;
+            btn.innerText = 'Restaurando...';
+
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    // Limpar e Restaurar cada coleção no Firebase
+                    const collections = ['news', 'sponsors', 'managers', 'coaches', 'locations'];
+                    
+                    for (const key of collections) {
+                        if (data[key]) {
+                            // 1. Pegar itens atuais
+                            const currentItems = await Storage.get(key, false);
+                            // 2. Deletar atuais
+                            for (const item of currentItems) {
+                                await Storage.delete(key, item.id);
+                            }
+                            // 3. Adicionar novos
+                            for (const item of data[key]) {
+                                await Storage.add(key, item);
+                            }
+                        }
+                    }
+
+                    // Restaurar ClubInfo no localStorage
+                    if (data.clubInfo) {
+                        localStorage.setItem('clubInfo', JSON.stringify(data.clubInfo));
+                    }
+
+                    alert('Restauração completa com sucesso!');
+                    window.location.reload();
+                } catch (err) {
+                    console.error(err);
+                    alert('Erro na restauração: ' + err.message);
+                } finally {
+                    btn.disabled = false;
+                    btn.innerText = 'Upload e Restaurar';
+                }
+            };
+            reader.readAsText(input.files[0]);
+        }
+    </script>
+</body>
+
+</html>

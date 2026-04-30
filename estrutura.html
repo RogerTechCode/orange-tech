@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura - Orange Futebol Clube</title>
+    <meta name="description" content="Nossa estrutura conta com campos de excelência em Recife. Conheça as arenas do Orange Futebol Clube preparadas para a melhor formação.">
+    <meta name="keywords" content="estrutura orange fc, campos de futebol recife, centro de treinamento, arena boa viagem, arena candeias">
+    <meta name="author" content="Orange Futebol Clube">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Estrutura - Orange Futebol Clube">
+    <meta property="og:description" content="Conheça a excelente infraestrutura do Orange Futebol Clube em Recife.">
+    <meta property="og:image" content="https://www.orangefutpe.com.br/ORANGE%203%20(1).png">
+    <meta property="og:type" content="website">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { orange: { primary: '#f05137', dark: '#d9412a', light: '#f57d6b' } },
+                    fontFamily: { 'poppins': ['Poppins', 'sans-serif'], 'sans': ['Open Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col font-sans bg-slate-950">
+    <header class="sticky top-0 z-50 w-full shadow-md bg-white">
+        <div id="top-banner"
+            class="bg-[#f05137] w-full flex items-center justify-between px-4 md:px-8 lg:px-16 h-[60px] transition-all duration-300">
+            <div class="flex justify-start items-center">
+                <img src="logo-mecanica.png" alt="Laranja Mecânica" class="h-10 w-auto transition-all duration-300">
+            </div>
+            <div class="flex justify-end items-center space-x-3 md:space-x-4 text-white">
+
+                <div class="h-4 w-px bg-white/20 mx-2"></div>
+                <!-- Instagram -->
+                <a href="#" class="hover:text-black transition-colors" title="Instagram">
+                    <svg xmlns="https://www.instagram.com/orangefcrecife/" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@OrangeFCTV" class="hover:text-black transition-colors"
+                    title="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.46-5.58z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/orange-futebol-clube-recife-1b28ba3a1/"
+                    class="hover:text-black transition-colors" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@orangefutebolclube?_r=1&_t=ZS-94d8ta4nWN7"
+                    class="hover:text-black transition-colors" title="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+                <!-- Facebook -->
+                <a href="#" class="hover:text-black transition-colors" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div id="nav-bar"
+            class="bg-white w-full h-[80px] flex items-center justify-between px-4 md:px-8 lg:px-16 transition-all duration-300 relative">
+            <nav class="hidden md:flex flex-1 justify-end pr-20 lg:pr-28 space-x-6 lg:space-x-8">
+                <a href="clube.html" class="font-bold text-sm tracking-wide text-black hover:text-[#f05137]">CLUBE</a>
+                <a href="equipe.html" class="font-bold text-sm tracking-wide text-black hover:text-[#f05137]">EQUIPE</a>
+                <a href="localizacao.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137]">LOCALIZAÇÃO</a>
+            </nav>
+            <a href="index.html" id="logo-container"
+                class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-30 transition-all duration-300">
+                <div
+                    class="bg-white rounded-full p-1 shadow-md w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+                    <img src="ORANGE 3 (1).png"
+                        alt="Logo" class="w-full h-full object-contain rounded-full">
+                </div>
+            </a>
+            <nav class="hidden md:flex flex-1 justify-start pl-20 lg:pl-28 space-x-6 lg:space-x-8">
+                <a href="estrutura.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137]">ESTRUTURA</a>
+                <a href="noticias.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137]">NOTÍCIAS</a>
+                <a href="contato.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137]">CONTATO</a>
+            </nav>
+            <div class="md:hidden flex-1 flex justify-end">
+                <button id="mobile-menu-btn" class="p-2 text-black hover:text-[#f05137]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-xl z-40">
+            <nav class="flex flex-col py-4 px-6 space-y-4">
+                <a href="clube.html" class="font-bold text-lg">CLUBE</a>
+                <a href="equipe.html" class="font-bold text-lg">EQUIPE</a>
+                <a href="localizacao.html" class="font-bold text-lg">LOCALIZAÇÃO</a>
+                <a href="estrutura.html" class="font-bold text-lg">ESTRUTURA</a>
+                <a href="noticias.html" class="font-bold text-lg">NOTÍCIAS</a>
+                <a href="contato.html" class="font-bold text-lg">CONTATO</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="h-[40vh] relative flex items-center justify-center text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="lapp.jpeg" class="w-full h-full object-cover scale-110 blur-[1px]">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-950/90 to-orange-primary/40 z-10">
+                </div>
+                <!-- Premium Background with noise -->
+                <div class="absolute inset-0 opacity-10 mix-blend-overlay bg-[url('data:image/svg+xml,%3Csvg viewBox=\"
+                    0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence
+                    type=\"fractalNoise\" baseFrequency=\"0.65\" numOctaves=\"3\"
+                    stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\"
+                    filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E')] z-20"></div>
+            </div>
+
+            <div class="container mx-auto px-4 z-30 text-center reveal">
+                <h1
+                    class="text-6xl md:text-8xl font-black italic tracking-tighter uppercase leading-none mb-4 drop-shadow-2xl">
+                    Estrutura</h1>
+                <span
+                    class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-poppins font-bold uppercase tracking-widest text-orange-primary reveal reveal-delay-1">Excelência
+                    em
+                    cada metro quadrado</span>
+                <div class="w-16 h-1.5 bg-orange-primary mx-auto mt-6 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- LAPP Section - The Scientific Heart -->
+        <section class="py-24 bg-slate-950 text-white relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="lg:w-1/2 reveal">
+                        <h3 class="text-orange-primary font-black uppercase tracking-widest text-sm mb-4">
+                            Desenvolvimento Técnico</h3>
+                        <h2 class="text-4xl md:text-6xl font-black text-white italic uppercase mb-6">Arena<br>Candeias
+                        </h2>
+                        <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                            Nossa sede técnica principal em Candeias conta com 2 campos society de gramado
+                            sintético profissional, além de áreas específicas para treinamentos de
+                            fundamentos e goleiros. É a base onde nosso DNA técnico é forjado diariamente.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span
+                                class="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Treino
+                                Técnico</span>
+                            <span
+                                class="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Tática
+                                Aplicada</span>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 reveal reveal-delay-2">
+                        <div
+                            class="splide splide-belogol rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="candeias 2.jpeg" alt="Unidade Belo Gol 1"
+                                            class="w-full h-[400px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="candeias1.jpeg" alt="Unidade Belo Gol 2"
+                                            class="w-full h-[400px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="candeias3.jpeg" alt="Unidade Belo Gol 3"
+                                            class="w-full h-[400px] object-cover">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CT Arena Candeias -->
+        <section class="py-24 bg-premium-light border-b border-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
+                    <div class="lg:w-1/2 order-2 lg:order-1 reveal">
+                        <div class="splide splide-candeias rounded-3xl shadow-xl overflow-hidden">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="orangeestadio.jpeg" alt="Arena Candeias 1"
+                                            class="w-full h-[400px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="WhatsApp Image 2026-03-01 at 23.46.54.jpeg" alt="Arena Candeias 2"
+                                            class="w-full h-[400px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="orangeestrutura.jpeg" alt="Arena Candeias 3"
+                                            class="w-full h-[400px] object-cover">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 order-1 lg:order-2 reveal">
+                        <h3 class="text-orange-primary font-black uppercase tracking-widest text-sm mb-4">Unidade Modelo
+                        </h3>
+                        <h2 class="text-4xl md:text-6xl font-black text-slate-900 italic uppercase mb-6">
+                            Arena<br>Boa Viagem</h2>
+                        <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                            Estrategicamente localizada, a unidade Belo Gol oferece uma infraestrutura de alto nível
+                            para o aperfeiçoamento técnico individual e coletivo. Com foco em intensidade e dinâmica de
+                            jogo, é o ambiente ideal para atletas que buscam o próximo nível de competição.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unidade Belo Gol -->
+        <section class="py-24 bg-slate-950 border-y border-white/5 relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <div
+                            class="inline-flex items-center gap-2 bg-orange-primary/10 border border-orange-primary/20 px-4 py-2 rounded-full mb-8">
+                            <span class="w-2 h-2 bg-orange-primary rounded-full animate-pulse"></span>
+                            <span class="text-orange-primary font-bold uppercase tracking-widest text-xs">O Coração
+                                Científico</span>
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-black text-white italic uppercase mb-8 leading-tight">
+                            LAPP<br><span class="text-orange-primary text-2xl md:text-4xl">Lab. de Avaliação e
+                                Performance</span></h2>
+                        <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                            O LAPP é onde a ciência encontra o campo. Nossa central física é equipada com tecnologia de
+                            ponta para monitoramento GPS, análise termográfica e testes ergométricos de alta precisão.
+                            Aqui, cada atleta é mapeado para atingir seu potencial genético e técnico máximo.
+                        </p>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center gap-4 text-white font-bold">
+                                <div class="w-6 h-6 bg-orange-primary rounded flex items-center justify-center">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                Avaliação Antropométrica Detalhada
+                            </li>
+                            <li class="flex items-center gap-4 text-white font-bold">
+                                <div class="w-6 h-6 bg-orange-primary rounded flex items-center justify-center">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                Testes de Carga e Resistência Aeróbica
+                            </li>
+                            <li class="flex items-center gap-4 text-white font-bold">
+                                <div class="w-6 h-6 bg-orange-primary rounded flex items-center justify-center">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                Mapeamento de Biomecânica Preventiva
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative reveal reveal-delay-2">
+                        <div class="absolute -inset-4 bg-orange-primary/20 blur-3xl opacity-20 rounded-full"></div>
+                        <div
+                            class="splide splide-lapp rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative z-10">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="lapp.jpeg" alt="LAPP Lab 1" class="w-full h-[500px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="lap.jpeg" alt="LAPP Lab 2" class="w-full h-[500px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="lapi.jpeg" alt="LAPP Lab 3" class="w-full h-[500px] object-cover">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="lappy.jpeg" alt="LAPP Lab 3" class="w-full h-[500px] object-cover">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Health & Analysis Hub -->
+        <section class="py-24 bg-premium-light">
+            <div class="container mx-auto px-4 text-center mb-16 reveal">
+                <h2 class="text-4xl font-black text-slate-900 italic uppercase">Suporte e<br><span
+                        class="text-orange-primary">Recuperação</span></h2>
+            </div>
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl reveal">
+                        <div class="w-16 h-16 bg-orange-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                            <svg class="w-8 h-8 text-orange-primary" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Lab de Fisiologia</h3>
+                        <p class="text-slate-500 leading-relaxed">Avaliação contínua dos índices hematológicos e de
+                            desgaste muscular para prevenir lesões antes que elas aconteçam.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl reveal reveal-delay-1">
+                        <div class="w-16 h-16 bg-orange-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                            <svg class="w-8 h-8 text-orange-primary" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Sala de Análise de Vídeo</h3>
+                        <p class="text-slate-500 leading-relaxed">Nossos atletas revisam suas sessões de treino e jogos
+                            através de softwares de análise tática usados por clubes europeus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="bg-orange-primary py-16">
+        <div class="container mx-auto px-4 text-center reveal">
+            <h2 class="text-3xl font-bold text-white mb-12 font-poppins tracking-wide">NOSSOS PARCEIROS
+            </h2>
+            <div id="sponsors-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900 py-12 text-center text-gray-500 border-t border-gray-800 font-sans">
+        <div class="container mx-auto px-4">
+            <p class="text-sm">&copy; 2026 Orange Futebol Clube. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

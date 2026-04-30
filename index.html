@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Futebol Clube - Formando Campeões desde 2020</title>
+    <meta name="description" content="Orange Futebol Clube - Escola de futebol em Recife com mais de 25 anos de tradição. Formação de atletas, categorias de base e estrutura profissional.">
+    <meta name="keywords" content="escolinha de futebol, recife, orange fc, futebol infantil, categorias de base, treinos de futebol, escola de futebol recife">
+    <meta name="author" content="Orange Futebol Clube">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Orange Futebol Clube - Formando Campeões desde 2020">
+    <meta property="og:description" content="Orange Futebol Clube - Escola de futebol em Recife com mais de 25 anos de tradição. Formação de atletas, categorias de base e estrutura profissional.">
+    <meta property="og:image" content="https://www.orangefutpe.com.br/ORANGE%203%20(1).png">
+    <meta property="og:url" content="https://www.orangefutpe.com.br/">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f05137',
+                            600: '#d9412a',
+                            700: '#b8321f',
+                            800: '#94291c',
+                            900: '#7a241a',
+                            primary: '#f05137',
+                            dark: '#d9412a',
+                            light: '#f57d6b',
+                        }
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'sans': ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col font-sans">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full shadow-md transition-all duration-300 bg-white">
+        <!-- Top Banner -->
+        <div id="top-banner"
+            class="bg-[#f05137] w-full flex items-center justify-between px-4 md:px-8 lg:px-16 transition-all duration-300 h-[60px]">
+            <div class="flex justify-start items-center">
+                <img src="logo-mecanica.png" alt="Laranja Mecânica" class="h-10 w-auto transition-all duration-300">
+            </div>
+            <div class="flex justify-end items-center space-x-3 md:space-x-4 text-white">
+                <!-- Social Icons -->
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/orangefcrecife/" class="hover:text-black transition-colors"
+                    title="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@OrangeFCTV" transition-colors" title="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.46-5.58z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/orange-futebol-clube-recife-1b28ba3a1/"
+                    class="hover:text-black transition-colors" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@orangefutebolclube?_r=1&_t=ZS-94d8ta4nWN7"
+                    class="hover:text-black transition-colors" title="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+                <!-- Facebook -->
+                <a href="#" class="hover:text-black transition-colors" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div id="nav-bar"
+            class="bg-white w-full relative flex items-center justify-between px-4 md:px-8 lg:px-16 transition-all duration-300 h-[80px]">
+            <!-- Left Navigation -->
+            <nav class="hidden md:flex flex-1 justify-end pr-20 lg:pr-28 space-x-6 lg:space-x-8">
+                <a href="clube.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137] transition-colors duration-200 relative py-2">CLUBE</a>
+                <a href="equipe.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137] transition-colors duration-200 relative py-2">EQUIPE</a>
+                <a href="localizacao.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137] transition-colors duration-200 relative py-2">LOCALIZAÇÃO</a>
+            </nav>
+
+            <!-- Center Logo — CORRIGIDO: top-1/2 (era top-0) e md:h-24 (era h-24 sem prefixo) -->
+            <a href="index.html" id="logo-container"
+                class="absolute left-1/2 z-30 group transition-all duration-300 ease-in-out top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div
+                    class="bg-white rounded-full p-1 shadow-md group-hover:scale-105 transition-all duration-300 flex items-center justify-center w-20 h-20 md:w-24 md:h-24">
+                    <img src="ORANGE 3 (1).png"
+                        alt="Orange Futebol Clube Logo" class="w-full h-full object-contain rounded-full">
+                </div>
+            </a>
+
+            <!-- Right Navigation -->
+            <nav class="hidden md:flex flex-1 justify-start pl-20 lg:pl-28 space-x-6 lg:space-x-8">
+                <a href="estrutura.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137] transition-colors duration-200 relative py-2">ESTRUTURA</a>
+                <a href="noticias.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137] transition-colors duration-200 relative py-2">NOTÍCIAS</a>
+                <a href="contato.html"
+                    class="font-bold text-sm tracking-wide text-black hover:text-[#f05137] transition-colors duration-200 relative py-2">CONTATO</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex-1 flex justify-end">
+                <button id="mobile-menu-btn" class="p-2 text-black hover:text-[#f05137] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 overflow-hidden absolute w-full left-0 top-full shadow-xl z-40">
+            <nav class="flex flex-col py-4 px-6 space-y-4">
+                <a href="clube.html"
+                    class="font-bold text-lg tracking-wide text-black hover:text-[#f05137] transition-colors">SOBRE</a>
+                <a href="equipe.html"
+                    class="font-bold text-lg tracking-wide text-black hover:text-[#f05137] transition-colors">EQUIPE</a>
+                <a href="localizacao.html"
+                    class="font-bold text-lg tracking-wide text-black hover:text-[#f05137] transition-colors">LOCALIZAÇÃO</a>
+                <a href="estrutura.html"
+                    class="font-bold text-lg tracking-wide text-black hover:text-[#f05137] transition-colors">ESTRUTURA</a>
+                <a href="noticias.html"
+                    class="font-bold text-lg tracking-wide text-black hover:text-[#f05137] transition-colors">NOTÍCIAS</a>
+                <a href="contato.html"
+                    class="font-bold text-lg tracking-wide text-black hover:text-[#f05137] transition-colors">CONTATO</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative h-[500px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="orangeestadio.jpeg" alt="Orange Futebol Clube - Campo de futebol"
+                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-orange-primary/40 to-orange-primary/85"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 text-center text-white">
+                <h1 class="text-5xl md:text-8xl font-black mb-6 hero-title reveal">Orange Futebol Clube</h1>
+                <p
+                    class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-poppins font-bold uppercase tracking-widest text-orange-primary reveal reveal-delay-1 drop-shadow-[0_0_10px_rgba(0,0,0,0.6)]">
+                    Onde o futuro do jogo acontece</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-delay-2">
+                    <a href="contato.html"
+                        class="px-8 py-4 bg-white text-orange-600 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
+                        Entre em Contato
+                        <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="clube.html"
+                        class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-bold hover:bg-white/10 transition-colors inline-flex items-center justify-center">Conheça
+                        o Clube</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-24 bg-premium-light border-b border-gray-100/50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-6xl font-black text-gray-900 mb-4 section-title">Por que escolher o
+                        <span class="text-orange-primary">Orange FC</span>?
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto font-medium">Mais de 6 anos de tradição e
+                        excelência na
+                        formação de atletas</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Excellence -->
+                    <div
+                        class="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-8 text-center group hover:shadow-2xl hover:shadow-orange-500/10 transition-all hover:-translate-y-2 reveal reveal-delay-1">
+                        <div
+                            class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                <path d="M4 22h16"></path>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Excelência Esportiva</h3>
+                        <p class="text-gray-600">Metodologia inspirada nos grandes clubes europeus</p>
+                    </div>
+                    <!-- Team -->
+                    <div
+                        class="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-8 text-center group hover:shadow-2xl hover:shadow-orange-500/10 transition-all hover:-translate-y-2 reveal reveal-delay-2">
+                        <div
+                            class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Elite Técnica</h3>
+                        <p class="text-gray-600">Desenvolvimento integral do atleta de alto rendimento</p>
+                    </div>
+                    <!-- Units -->
+                    <div
+                        class="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-8 text-center group hover:shadow-2xl hover:shadow-orange-500/10 transition-all hover:-translate-y-2 reveal reveal-delay-3">
+                        <div
+                            class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Estrutura de Ponta</h3>
+                        <p class="text-gray-600">Centros de treinamento com padrão de excelência</p>
+                    </div>
+                    <!-- News -->
+                    <div
+                        class="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-8 text-center group hover:shadow-2xl hover:shadow-orange-500/10 transition-all hover:-translate-y-2 reveal reveal-delay-4">
+                        <div
+                            class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2">
+                                </path>
+                                <path d="M18 14h-8"></path>
+                                <path d="M15 18h-5"></path>
+                                <path d="M10 6h8v4h-8V6Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">DNA Vencedor</h3>
+                        <p class="text-gray-600">História de conquistas traduzida em formação</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Portal do Aluno (Fensor) Section -->
+            <section class="py-24 bg-premium-light relative overflow-hidden">
+                <!-- Background effects standardized for light mode -->
+                <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-primary/5 rounded-full blur-[120px]">
+                    </div>
+                    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-primary/5 rounded-full blur-[120px]">
+                    </div>
+                </div>
+
+                <div class="container mx-auto px-4 relative z-10">
+                    <div class="flex flex-col lg:flex-row items-center gap-16">
+                        <!-- Text Side -->
+                        <div class="lg:w-1/2 reveal">
+                            <div
+                                class="inline-block px-4 py-1.5 mb-6 rounded-full bg-orange-primary/10 border border-orange-primary/20">
+                                <span class="text-orange-primary text-xs font-black uppercase tracking-[0.3em]">Gestão
+                                    Inteligente</span>
+                            </div>
+                            <h2
+                                class="text-4xl md:text-7xl font-black text-slate-900 mb-8 font-poppins italic tracking-tighter leading-none uppercase">
+                                PORTAL DO <span class="text-orange-primary">ALUNO</span>
+                            </h2>
+                            <p class="text-xl text-slate-500 mb-10 font-medium leading-relaxed">
+                                A tecnologia a serviço do seu desenvolvimento. Utilizamos a plataforma <span
+                                    class="text-orange-primary font-bold">Fensor</span> para uma gestão moderna e
+                                transparente.
+                            </p>
+
+                            <!-- Feature Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                                <div class="flex items-center gap-4 group">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-lg shadow-slate-200/50 group-hover:border-orange-primary/50 transition-colors">
+                                        <svg class="w-6 h-6 text-orange-primary" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="text-slate-800 font-extrabold uppercase text-xs tracking-widest">Matrículas
+                                        Online</span>
+                                </div>
+                                <div class="flex items-center gap-4 group">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-lg shadow-slate-200/50 group-hover:border-orange-primary/50 transition-colors">
+                                        <svg class="w-6 h-6 text-orange-primary" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="text-slate-800 font-extrabold uppercase text-xs tracking-widest">Frequência
+                                        em Tempo Real</span>
+                                </div>
+                                <div class="flex items-center gap-4 group">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-lg shadow-slate-200/50 group-hover:border-orange-primary/50 transition-colors">
+                                        <svg class="w-6 h-6 text-orange-primary" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-slate-800 font-extrabold uppercase text-xs tracking-widest">Acesso
+                                        à Loja</span>
+                                </div>
+                                <div class="flex items-center gap-4 group">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shadow-lg shadow-slate-200/50 group-hover:border-orange-primary/50 transition-colors">
+                                        <svg class="w-6 h-6 text-orange-primary" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="text-slate-800 font-extrabold uppercase text-xs tracking-widest">Mensalidades
+                                        e Taxas</span>
+                                </div>
+                            </div>
+
+                            <a href="https://orange.fensor.com.br/" target="_blank"
+                                class="inline-flex items-center gap-4 bg-orange-primary text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all shadow-xl shadow-orange-500/20 hover:-translate-y-1">
+                                Acessar Fensor
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Simplified/Text Side -->
+                        <div
+                            class="lg:w-1/2 reveal reveal-delay-2 flex flex-col items-center lg:items-end text-center lg:text-right">
+                            <div class="relative max-w-md">
+                                <span
+                                    class="absolute -top-10 -left-6 lg:-right-6 text-9xl text-orange-primary/5 font-black hidden lg:block leading-none">"</span>
+                                <p
+                                    class="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] font-poppins italic uppercase tracking-tighter mb-6 relative z-10">
+                                    Treine com <span
+                                        class="text-orange-primary underline decoration-4 underline-offset-8">Tecnologia,</span><br>
+                                    evolua com <span class="text-orange-primary">Propósito.</span>
+                                </p>
+                                <div class="h-1.5 w-24 bg-orange-primary rounded-full ml-auto hidden lg:block"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    </main>
+
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-orange-600 to-orange-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="reveal">
+                <h2 class="text-4xl font-bold mb-6 font-poppins">Faça parte do Orange FC</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Venha treinar com os melhores e desenvolva todo seu
+                    potencial no futebol</p>
+                <a href="https://wa.me/5581998620365?text=Ol%C3%A1!!%20Vim%20do%20site%20da%20Orange%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+                    class="inline-flex items-center px-8 py-4 bg-white text-orange-600 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                    Agende uma Visita
+                    <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orange Store Section (Hellas-inspired) -->
+    <section class="py-24 bg-premium-light">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Text Side -->
+                <div class="lg:w-1/4 pt-12 reveal">
+                    <h2 class="text-2xl font-black text-[#002B5B] font-poppins mb-6 leading-tight uppercase">
+                        LOJA ORANGE
+                    </h2>
+                    <p class="text-gray-600 text-sm mb-10 leading-relaxed font-medium">
+                        Sua loja para todos os produtos oficiais do Orange Futebol Clube. Você pode nos encontrar em
+                        Recife (Unidades Candeias e Boa Viagem), no Centro de Treinamento em dias de treino e online
+                        em fensor.com! Faça seu cadastro no Fensor e compre seus itens.
+                    </p>
+                    <a href="https://orange.fensor.com.br/" class="inline-flex items-center gap-3 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#f05137" stroke-width="2.5" class="transition-transform group-hover:scale-110">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                            <path d="M3 6h18" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span
+                            class="font-bold text-lg text-[#002B5B] uppercase tracking-wider group-hover:text-orange-primary transition-colors">FENSOR.COM</span>
+                    </a>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Product 1 -->
+                    <div class="flex flex-col items-center reveal reveal-delay-1">
+
+                        <p class="font-bold text-[#002B5B] uppercase text-sm mb-10">Camisa titular 2026/27</p>
+                        <div class="mb-10 w-full flex justify-center">
+                            <img src="MOCKUP CAMISA ORANGE.jpg (1) - Editado.png" alt="Camisa Titular"
+                                class="max-w-[320px] h-auto drop-shadow-xl hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="flex flex-col items-center reveal reveal-delay-2">
+                        <p class="font-bold text-[#002B5B] uppercase text-sm mb-10">Camisa de visitante 2026/27</p>
+                        <div class="mb-10 w-full flex justify-center">
+                            <img src="2.png" alt="Camisa Visitante"
+                                class="max-w-[320px] h-auto drop-shadow-xl hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Partners Section -->
+    <section class="bg-[#f05137] py-16">
+        <div class="container mx-auto px-4 text-center reveal">
+            <h2 class="text-3xl font-bold text-white mb-12 font-poppins tracking-wide italic uppercase">NOSSOS PARCEIROS
+            </h2>
+            <div id="sponsors-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 text-center text-gray-500 border-t border-gray-800 font-sans">
+        <div class="container mx-auto px-4">
+            <p class="text-sm">&copy; 2026 Orange Futebol Clube. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
