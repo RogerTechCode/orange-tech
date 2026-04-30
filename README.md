@@ -47,3 +47,34 @@ orangefc/
 │   ├── dashboard.html
 │   └── scripts/
 └── README.md
+Como Executar o Projeto
+Clone o repositório:
+git clone https://github.com/seu-usuario/orangefc.git
+Acesse a pasta do projeto:
+cd orangefc
+Abra o arquivo index.html no navegador
+ou utilize uma extensão como Live Server no Visual Studio Code
+Integração com Banco de Dados
+
+O projeto utiliza o Firebase Firestore para armazenamento de dados dinâmicos.
+
+Principais coleções utilizadas:
+
+news
+sponsors
+managers
+
+Observação: é necessário configurar suas próprias credenciais do Firebase para funcionamento completo.
+
+Objetivo do Projeto
+
+Este projeto foi desenvolvido com o objetivo de praticar:
+
+Manipulação de DOM com JavaScript
+Integração com banco de dados NoSQL
+Estruturação de projetos front-end
+Criação de interfaces administrativas
+Simulação de sistemas reais utilizados no mercado
+Autor
+
+Roger Vitor Cavalcanti
