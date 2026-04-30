@@ -47,13 +47,15 @@ orangefc/
 │   ├── dashboard.html
 │   └── scripts/
 └── README.md
+
 Como Executar o Projeto
 Clone o repositório:
-git clone https://github.com/seu-usuario/orangefc.git
+git clone https://github.com/RogerTechCode/orange-tech.git
 Acesse a pasta do projeto:
-cd orangefc
+cd orange-tech
 Abra o arquivo index.html no navegador
 ou utilize uma extensão como Live Server no Visual Studio Code
+
 Integração com Banco de Dados
 
 O projeto utiliza o Firebase Firestore para armazenamento de dados dinâmicos.
